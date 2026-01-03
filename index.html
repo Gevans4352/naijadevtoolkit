@@ -6,7 +6,7 @@
   <title>Naija Dev Toolkit</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="./wave.png">
+    <link rel="icon" href="./wave.png">
   <meta name="author" content="Feranmi">
   <meta name="copyright" content="© 2026 Feranmi. All rights reserved.">
 </head>
@@ -17,7 +17,7 @@
       <p id="sub-header">Everyday utilities built for Nigerian developers.</p>
     </div>
     <div class="hero-actions">
-      <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+      <button id="theme-toggle" class="icon-btn">
         <i class="fas fa-moon"></i>
       </button>
       <button id="lang-btn" class="pill-btn" onclick="togglePidgin()">
@@ -26,63 +26,40 @@
     </div>
   </header>
   <main class="tools">
-    <!-- Phone Validator -->
     <section class="tool-card">
       <div class="tool-icon"><i class="fas fa-phone"></i></div>
-      <h3 id="label-phone">Phone Validator</h3>
-      <label for="phoneInput" class="sr-only">Enter phone number</label>
-      <input id="phoneInput" maxlength="11" placeholder="0803..." aria-describedby="phoneResult" />
-      <div id="phoneResult" class="status-box hidden" role="status"></div>
+      <h3>Phone Validator</h3>
+      <input id="phoneInput" maxlength="11" placeholder="0803..." />
+      <div id="phoneResult" class="status-box hidden"></div>
     </section>
-
-    <!-- Naira Formatter -->
     <section class="tool-card">
       <div class="tool-icon"><i class="fas fa-naira-sign"></i></div>
-      <h3 id="label-naira">Naira Formatter</h3>
-      <label for="nairaInput" class="sr-only">Enter amount</label>
-      <input id="nairaInput" type="text" placeholder="Enter amount" aria-describedby="nairaResult" />
-      <div id="nairaResult" class="big-display" role="status">₦0.00</div>
+      <h3>Naira Formatter</h3>
+      <input id="nairaInput" type="number" placeholder="Enter amount" />
+      <div id="nairaResult" class="big-display">₦0.00</div>
     </section>
-
-    <!-- Bank Codes -->
     <section class="tool-card">
       <div class="tool-icon"><i class="fas fa-building-columns"></i></div>
-      <h3 id="label-bank">Bank Codes</h3>
+      <h3>Bank Codes</h3>
       <div class="custom-select">
-        <label for="bankSearch" class="sr-only">Search bank</label>
-        <input id="bankSearch" placeholder="Search bank..." role="combobox" aria-expanded="false" aria-controls="bankList" aria-autocomplete="list" />
-        <div id="bankList" class="dropdown-list" role="listbox"></div>
+        <input id="bankSearch" placeholder="Search bank..." />
+        <div id="bankList" class="dropdown-list"></div>
       </div>
     </section>
-
-    <!-- ID Validator -->
     <section class="tool-card">
       <div class="tool-icon"><i class="fas fa-id-card"></i></div>
-      <h3 id="label-id">ID Validator</h3>
-      <label for="idInput" class="sr-only">Enter BVN or NIN</label>
-      <input id="idInput" maxlength="11" placeholder="BVN or NIN" aria-describedby="idResult" />
-      <div id="idResult" class="status-hint" role="status">Waiting for input…</div>
-    </section>
-
-    <!-- USSD Codes (NEW) -->
-    <section class="tool-card">
-      <div class="tool-icon"><i class="fas fa-hashtag"></i></div>
-      <h3 id="label-ussd">USSD Codes</h3>
-      <div class="custom-select">
-        <label for="ussdSearch" class="sr-only">Search USSD code</label>
-        <input id="ussdSearch" placeholder="Search service..." role="combobox" aria-expanded="false" aria-controls="ussdList" aria-autocomplete="list" />
-        <div id="ussdList" class="dropdown-list" role="listbox"></div>
-      </div>
+      <h3>ID Validator</h3>
+      <input id="idInput" maxlength="11" placeholder="BVN or NIN" />
+      <div id="idResult" class="status-hint">Waiting for input…</div>
     </section>
   </main>
 
-  <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+  <div id="toast" class="toast">Copied!</div>
 
   <footer>
     <p>Open-source • Built for Naija devs 🇳🇬</p>
   </footer>
 
-  <!-- Modularized Scripts -->
-  <script type="module" src="js/main.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
