@@ -30,6 +30,8 @@ body {
   color: var(--text);
 }
 
+/* ---------- HERO ---------- */
+
 .hero {
   max-width: 1100px;
   margin: auto;
@@ -55,6 +57,8 @@ body {
   gap: .75rem;
   flex-shrink: 0;
 }
+
+/* ---------- TOOLS GRID ---------- */
 
 .tools {
   max-width: 1100px;
@@ -92,18 +96,20 @@ body {
   color: white;
 }
 
+/* ---------- INPUTS ---------- */
+
 .input-wrapper {
   position: relative;
 }
 
 input {
-  padding: .8rem;
+  width: 100%;
+  padding: .9rem;
   border-radius: .75rem;
   border: 1px solid var(--border);
   background: var(--input);
   color: var(--text);
   font-size: 1rem;
-  width: 100%;
 }
 
 input:focus {
@@ -118,11 +124,13 @@ input:focus {
   word-break: break-word;
 }
 
+/* ---------- BUTTONS ---------- */
+
 .pill-btn {
   background: var(--primary);
   color: white;
   border: none;
-  padding: .6rem 1.2rem;
+  padding: .7rem 1.3rem;
   border-radius: 999px;
   cursor: pointer;
   font-size: clamp(0.875rem, 2vw, 1rem);
@@ -137,7 +145,7 @@ input:focus {
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text);
-  padding: .6rem;
+  padding: .7rem;
   border-radius: .75rem;
   cursor: pointer;
   display: flex;
@@ -148,6 +156,8 @@ input:focus {
 .icon-btn:hover {
   background: var(--card);
 }
+
+/* ---------- DROPDOWN ---------- */
 
 .dropdown-list {
   position: absolute;
@@ -163,25 +173,6 @@ input:focus {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.dropdown-list::-webkit-scrollbar {
-  width: 8px;
-}
-
-.dropdown-list::-webkit-scrollbar-track {
-  background: transparent; 
-  border-radius: 0 .75rem .75rem 0; 
-}
-
-.dropdown-list::-webkit-scrollbar-thumb {
-  background: var(--border); 
-  border-radius: 10px;
-  border: 2px solid var(--input);
-}
-
-.dropdown-list::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
-
 .dropdown-item {
   padding: .75rem;
   display: flex;
@@ -194,6 +185,8 @@ input:focus {
   background: var(--primary);
   color: white;
 }
+
+/* ---------- TOAST ---------- */
 
 .toast {
   position: fixed;
@@ -211,6 +204,8 @@ input:focus {
   z-index: 10000;
 }
 
+/* ---------- FOOTER ---------- */
+
 footer {
   text-align: center;
   padding: 2rem;
@@ -218,39 +213,50 @@ footer {
   font-size: clamp(0.875rem, 2vw, 1rem);
 }
 
-@media (max-width: 640px) {
+/* =====================================================
+   MOBILE IMPROVEMENTS (Issue Requirement: <600px)
+   ===================================================== */
+
+@media (max-width: 600px) {
   .hero {
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem 1rem;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
-  
+
   .hero-actions {
     width: 100%;
     flex-direction: column;
   }
-  
+
   .hero-actions .pill-btn,
   .hero-actions .icon-btn {
     width: 100%;
     justify-content: center;
   }
-  
+
   .tools {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 1rem;
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .tool-card {
     padding: 1.25rem;
   }
-  
-  .dropdown-list {
-    max-height: 180px;
+
+  input {
+    font-size: 16px; /* prevents mobile zoom */
+    padding: 1rem;
   }
-  
+
+  .pill-btn,
+  .icon-btn,
+  .dropdown-item {
+    min-height: 44px; /* touch-friendly */
+  }
+
   .toast {
     bottom: 1rem;
     left: 1rem;
@@ -259,29 +265,25 @@ footer {
     max-width: none;
   }
 }
-@media (min-width: 641px) and (max-width: 1024px) {
-  .hero {
-    padding: 2rem 1.5rem;
-  }
-  
+
+/* ---------- TABLET ---------- */
+
+@media (min-width: 601px) and (max-width: 1024px) {
   .tools {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    padding: 1.75rem 1.5rem;
   }
 }
-@media (min-width: 1025px) and (max-width: 1200px) {
-  .tools {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  }
-}
+
+/* ---------- TOUCH DEVICES ---------- */
+
 @media (hover: none) and (pointer: coarse) {
   .pill-btn,
   .icon-btn,
   .dropdown-item {
     min-height: 44px;
   }
-  
+
   input {
-    font-size: 16px; 
+    font-size: 16px;
   }
 }
