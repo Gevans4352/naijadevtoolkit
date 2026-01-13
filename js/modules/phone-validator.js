@@ -6,16 +6,16 @@ export function initPhoneValidator() {
   const result = document.getElementById('phoneResult');
 
   input.addEventListener('input', (e) => {
-    // 1. Clean input: remove non-digits
+    // Clean input: remove non-digits
     let rawVal = e.target.value.replace(/\D/g, '');
 
-    // 2. Handle +234 / 234 prefix
+    // Handle +234 / 234 prefix
     // If it starts with 234 and has more digits, replace 234 with 0
     if (rawVal.startsWith('234') && rawVal.length > 3) {
       rawVal = '0' + rawVal.substring(3);
     }
 
-    // Update input value only if it's a simple case to avoid fighting cursor
+    // Update input value only if it's a simple case
     // For now, let's just use rawVal for detection logic
 
     if (!rawVal) {
@@ -25,14 +25,14 @@ export function initPhoneValidator() {
 
     result.classList.remove('hidden');
 
-    // 3. Detect Network
+    // Detect Network
     // We look at the first 4 or 5 digits (some prefixes like 07025 are 5 digits)
     // But standard matching on first 4 is usually enough for the big ones.
     // Let's iterate through our networks object.
 
     let detectedNetwork = null;
 
-    // Check for 5-digit prefixes first (priority)
+    // Check for 5-digit prefixes first
     const prefix5 = rawVal.substring(0, 5);
     // Check for 4-digit prefixes
     const prefix4 = rawVal.substring(0, 4);
