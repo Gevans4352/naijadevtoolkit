@@ -6,14 +6,13 @@ export const banks = [
   { name: "First Bank of Nigeria", code: "011" },
   { name: "Kuda Bank", code: "090267" },
   { name: "Opay", code: "999992" },
-  { name: "Moniepoint (Formerly Monie Point)", code: "50515" },
+  { name: "Moniepoint MFB", code: "50515" },
   { name: "Fidelity Bank", code: "070" },
   { name: "Union Bank", code: "032" },
   { name: "Stanbic IBTC Bank", code: "221" },
   { name: "Sterling Bank", code: "232" },
   { name: "Wema Bank", code: "035" },
   { name: "Ecobank Nigeria", code: "050" },
-  { name: "Heritage Bank", code: "030" },
   { name: "Polaris Bank", code: "076" },
   { name: "Keystone Bank", code: "082" },
   { name: "First City Monument Bank (FCMB)", code: "214" },
@@ -34,5 +33,12 @@ export const banks = [
   { name: "TAJBank", code: "302" },
   { name: "Coronation Merchant Bank", code: "559" },
   { name: "Nova Merchant Bank", code: "060" },
-  { name: "Rand Merchant Bank", code: "502" }
+  { name: "Rand Merchant Bank", code: "502" },
+  // New banks
+  { name: "Premium Trust Bank", code: "000031" },
+  { name: "Signature Bank", code: "000034" },
+  { name: "Optimus Bank", code: "000036" },
+  { name: "The Alternative Bank", code: "000065" },
+  { name: "FairMoney MFB", code: "090448" }
 ];
+// Removed Heritage bank, the bank has liquidated
