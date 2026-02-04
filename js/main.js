@@ -15,4 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initBankSearch();
   initIdValidator();
   initUssdSearch();
+  
+  const langBtn = document.getElementById('lang-btn');
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      togglePidgin();
+    });
+  }
 });
