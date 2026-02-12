@@ -192,16 +192,25 @@ input:focus {
   position: fixed;
   bottom: 1.5rem;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(10px);
   background: var(--primary);
   color: white;
   padding: .6rem 1.2rem;
   border-radius: 999px;
-  display: none;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
   font-size: clamp(0.875rem, 2vw, 1rem);
   max-width: 90%;
   text-align: center;
   z-index: 10000;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
 }
 
 /* ---------- FOOTER ---------- */

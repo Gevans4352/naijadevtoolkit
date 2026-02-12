@@ -3,25 +3,29 @@ let toastTimeout = null;
 export function showToast(message) {
   const toast = document.getElementById('toast');
 
-  if (toastTimeout) clearTimeout(toastTimeout);
+  // Clear any existing toast
+  if (toastTimeout) {
+    clearTimeout(toastTimeout);
+    toast.classList.remove('show');
+  }
+
+  // Restart animation
+  void toast.offsetWidth;
 
   toast.innerText = message;
-  toast.style.display = "block";
+  toast.classList.add('show');
 
   toastTimeout = setTimeout(() => {
-    toast.style.display = "none";
-  }, 2500);
+    toast.classList.remove('show');
+  }, 2500); // 2.5 seconds
 }
 
 export function copyToClipboard(text, isPidgin = false, label = "") {
   navigator.clipboard.writeText(text);
 
-  let message;
-  if (isPidgin) {
-    message = label ? `${label} don copy!` : "E don set! Copied.";
-  } else {
-    message = label ? `${label} copied!` : "Copied to clipboard!";
-  }
+  const message = isPidgin
+    ? label ? `${label} don copy!` : "E don set! Copied."
+    : label ? `${label} copied!` : "Copied to clipboard!";
 
   showToast(message);
 }
